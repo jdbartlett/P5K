@@ -4,8 +4,11 @@ This library was written for situations where PHP >= 5.3 is
 unavailable. That should no longer be the case anywhere ever. If your
 server is running an older version of PHP, please update it!
 
-On newer versions of PHP, please use bcrypt instead. If you've used
-this library in the past, it will continue to work and you can use
+On newer versions of PHP, please use bcrypt instead. As of PHP 5.5
+[the password_hash function](http://us1.php.net/manual/en/function.password-hash.php)
+is built in, otherwise use [phpass](http://www.openwall.com/phpass/)
+for help generating secure random salts. If you've used my P5K
+library in the past, it will continue to work and you can use
 its signature to check whether individual password hashes are in the
 bcrypt or P5K format. I recommend, however, rehashing users'
 passwords through bcrypt when they next log in.
